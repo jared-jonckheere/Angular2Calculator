@@ -1,0 +1,66 @@
+﻿<input [(ngModel)]="expression" />
+
+<table>
+    <tr>
+        <td>
+            <button (click)="KeyPress(1)">1</button>
+        </td>
+        <td>
+            <button (click)="KeyPress(2)">2</button>
+        </td>
+        <td>
+            <button (click)="KeyPress(3)">3</button>
+        </td>
+        <td>
+            <button (click)="KeyPress('+')">+</button>
+        </td>
+        <td>
+            <button (click)="Clear()">C</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="KeyPress(4)">4</button>
+        </td>
+        <td>
+            <button (click)="KeyPress(5)">5</button>
+        </td>
+        <td>
+            <button (click)="KeyPress(6)">6</button>
+        </td>
+        <td>
+            <button (click)="KeyPress('-')">-</button>
+        </td>
+        <td>
+            <button (click)="Backspace()">&lt;-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="KeyPress(7)">7</button>
+        </td>
+        <td>
+            <button (click)="KeyPress(8)">8</button>
+        </td>
+        <td>
+            <button (click)="KeyPress(9)">9</button>
+        </td>
+        <td>
+            <button (click)="KeyPress('*')">*</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="KeyPress(0)">0</button>
+        </td>
+        <td>
+            <button (click)="KeyPress('.')">.</button>
+        </td>
+        <td>
+            <button (click)="Evaluate()">=</button>
+        </td>
+        <td>
+            <button (click)="KeyPress('/')">/</button>
+        </td>
+    </tr>
+</table>
