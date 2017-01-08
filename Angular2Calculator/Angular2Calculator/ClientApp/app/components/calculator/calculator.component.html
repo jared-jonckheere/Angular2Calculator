@@ -1,5 +1,5 @@
-﻿<input [(ngModel)]="expression" />
-
+﻿<input [(ngModel)]="expression" (keyup.enter)="Evaluate()"/>
+<div *ngIf="!Validate()">Invalid expression</div>
 <table>
     <tr>
         <td>

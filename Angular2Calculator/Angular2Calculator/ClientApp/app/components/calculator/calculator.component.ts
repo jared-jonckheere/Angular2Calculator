@@ -1,15 +1,20 @@
 ﻿import { Component } from '@angular/core';
+import { CalculationEngineService } from '../../services/calculation-engine.service.ts';
 
 @Component({
     selector: 'calculator',
-    template: require('./calculator.component.html')
+    template: require('./calculator.component.html'),
+    providers: [CalculationEngineService]
 })
 export class CalculatorComponent {
     expression: string = '';
-    validExprRe: RegExp = new RegExp('^[+-/*.0-9]*$');
+
+    constructor(private _calculationEngineService: CalculationEngineService) {
+
+    }
 
     KeyPress(c: string): void {
-        this.expression += c;
+        this.expression += c.toString();
     }
 
     Clear(): void {
@@ -23,13 +28,11 @@ export class CalculatorComponent {
     }
 
     Evaluate(): void {
-        //eval isn't dangerous as long as only +-/*.0-9 are allowed
-        if (this.validExprRe.test(this.expression)) {
-            this.expression = eval(this.expression);
-        }
-        else {
-            this.expression = "invalid expression";
-        }
+        this.expression = this._calculationEngineService.evaluate(this.expression);
+    }
+
+    Validate(): boolean {
+        return this._calculationEngineService.validate(this.expression);
     }
 
 }
