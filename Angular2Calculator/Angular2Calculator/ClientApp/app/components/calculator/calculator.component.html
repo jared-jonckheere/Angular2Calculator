@@ -1,65 +1,75 @@
-﻿<input [(ngModel)]="expression" (keyup.enter)="Evaluate()"/>
-<table>
-    <tr>
-        <td>
-            <button (click)="KeyPress(1)">1</button>
-        </td>
-        <td>
-            <button (click)="KeyPress(2)">2</button>
-        </td>
-        <td>
-            <button (click)="KeyPress(3)">3</button>
-        </td>
-        <td>
-            <button (click)="KeyPress('+')">+</button>
-        </td>
-        <td>
-            <button (click)="Clear()">C</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button (click)="KeyPress(4)">4</button>
-        </td>
-        <td>
-            <button (click)="KeyPress(5)">5</button>
-        </td>
-        <td>
-            <button (click)="KeyPress(6)">6</button>
-        </td>
-        <td>
-            <button (click)="KeyPress('-')">-</button>
-        </td>
-        <td>
-            <button (click)="Backspace()">&lt;-</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button (click)="KeyPress(7)">7</button>
-        </td>
-        <td>
-            <button (click)="KeyPress(8)">8</button>
-        </td>
-        <td>
-            <button (click)="KeyPress(9)">9</button>
-        </td>
-        <td>
-            <button (click)="KeyPress('*')">*</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button (click)="KeyPress(0)">0</button>
-        </td>
-        <td>
-            <button (click)="KeyPress('.')">.</button>
-        </td>
-        <td>
-            <button (click)="Evaluate()" [disabled]="!Validate()">=</button>
-        </td>
-        <td>
-            <button (click)="KeyPress('/')">/</button>
-        </td>
-    </tr>
-</table>
+﻿<div class="col-lg-6 calculator">
+    <div class="screen">
+        <input class="screen-input" [(ngModel)]="expression" (keyup.enter)="Evaluate()" />
+    </div>
+    <div class="keypad">
+        <table>
+            <tr>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(1)">1</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(2)">2</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(3)">3</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress('+')">+</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="Clear()">C</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(4)">4</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(5)">5</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(6)">6</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress('-')">-</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="Backspace()">&#8592;</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(7)">7</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(8)">8</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(9)">9</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress('*')">*</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress('-')">-</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress(0)">0</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress('.')">.</button>
+                </td>
+
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="KeyPress('/')">/</button>
+                </td>
+                <td>
+                    <button class="col-lg-1 col-sm-2 calculator-key" (click)="Evaluate()" [disabled]="!Validate()">=</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

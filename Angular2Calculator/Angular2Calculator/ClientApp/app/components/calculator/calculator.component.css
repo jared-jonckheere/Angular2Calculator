@@ -1,3 +1,20 @@
-﻿button:disabled {
+﻿.calculator {
+}
+
+.screen {
+    margin: 3px 3px 7px 3px;
+}
+
+.screen-input {
+    width: inherit;
+}
+
+button.calculator-key {
+    background-color: blue;
+    color: white;
+    margin: 2px;
+    text-align: center;
+}
+button.calculator-key:disabled {
     opacity: 0.3;
 }

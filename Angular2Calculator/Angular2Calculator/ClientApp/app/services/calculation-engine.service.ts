@@ -2,7 +2,7 @@
 
 @Injectable()
 export class CalculationEngineService {
-    validExprRe: RegExp = new RegExp('^-?[0-9]*\.?[0-9]+([+*/\-]-?[0-9]*.?[0-9]+)*$');
+    validExprRe: RegExp = new RegExp('^-?[0-9]*[.]?[0-9]+([+*/\-]-?[0-9]*[.]?[0-9]+)*$');
 
     evaluate(expression: string): string {
         var result: string = '';
@@ -14,7 +14,6 @@ export class CalculationEngineService {
                 result = eval(expression);
             }
             catch (err) {
-                alert(err);
                 result = "invalid expression";
             }
         }
@@ -27,6 +26,6 @@ export class CalculationEngineService {
 
     validate(expression: string): boolean {
         expression = expression.replace(' ', ''); //remove spaces ahead of time to make the regex simpler
-        return this.validExprRe.test(expression) || expression === '';
+        return this.validExprRe.test(expression) ;
     }
 }

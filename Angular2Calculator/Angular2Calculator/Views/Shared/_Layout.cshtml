@@ -3,12 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Angular 2 Calculator</title>
+    <title>Angular 2 Calculator</title>
     <base href="/" />
     <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+    <style>
+        body {
+          padding-top: 60px;
+        }
+    </style>
 </head>
 <body>
-    @RenderBody()
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    Angular2 Calculator
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
     @RenderSection("scripts", required: false)
 </body>
 </html>
