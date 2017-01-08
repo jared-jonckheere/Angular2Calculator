@@ -4,7 +4,8 @@ import { CalculationEngineService } from '../../services/calculation-engine.serv
 @Component({
     selector: 'calculator',
     template: require('./calculator.component.html'),
-    providers: [CalculationEngineService]
+    providers: [CalculationEngineService],
+    styles: [require('./calculator.component.css')]
 })
 export class CalculatorComponent {
     expression: string = '';
@@ -23,12 +24,16 @@ export class CalculatorComponent {
 
     Backspace(): void {
         var exprTemp: string = this.expression;
-        exprTemp = exprTemp.substr(0, exprTemp.length - 1);
+        if (exprTemp.length > 0) {
+            exprTemp = exprTemp.substr(0, exprTemp.length - 1);
+        }
         this.expression = exprTemp;
     }
 
     Evaluate(): void {
-        this.expression = this._calculationEngineService.evaluate(this.expression);
+        if (this.Validate()) {
+            this.expression = this._calculationEngineService.evaluate(this.expression).toString();
+        }
     }
 
     Validate(): boolean {

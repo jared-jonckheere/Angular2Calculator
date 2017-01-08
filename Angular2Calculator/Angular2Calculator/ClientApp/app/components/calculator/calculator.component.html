@@ -1,5 +1,4 @@
 ﻿<input [(ngModel)]="expression" (keyup.enter)="Evaluate()"/>
-<div *ngIf="!Validate()">Invalid expression</div>
 <table>
     <tr>
         <td>
@@ -57,7 +56,7 @@
             <button (click)="KeyPress('.')">.</button>
         </td>
         <td>
-            <button (click)="Evaluate()">=</button>
+            <button (click)="Evaluate()" [disabled]="!Validate()">=</button>
         </td>
         <td>
             <button (click)="KeyPress('/')">/</button>
