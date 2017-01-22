@@ -2,7 +2,8 @@
 
 @Injectable()
 export class CalculationEngineService {
-    validExprRe: RegExp = new RegExp('^-?[0-9]*[.]?[0-9]+([+*/\-]-?[0-9]*[.]?[0-9]+)*$');
+    numberPartialRegex: string = '-?(0|[1-9][0-9]{0,6})([.][0-9]{1,7})?';
+    validExprRe: RegExp = new RegExp('^'+this.numberPartialRegex+'([+*/\-]' + this.numberPartialRegex + ')*$');
 
     evaluate(expression: string): string {
         var result: string = '';
