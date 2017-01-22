@@ -1,0 +1,3 @@
+﻿<ul>
+    <li *ngFor="let calculation of calculations" (click)="clickCalculation(calculation)" >{{calculation.expression + '=' + calculation.result}}</li>
+</ul>

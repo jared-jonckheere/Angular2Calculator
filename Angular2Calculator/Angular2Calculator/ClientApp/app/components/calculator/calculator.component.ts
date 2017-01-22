@@ -1,5 +1,6 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CalculationEngineService } from '../../services/calculation-engine.service.ts';
+import {ICalculation} from './calculation.ts'
 
 @Component({
     selector: 'calculator',
@@ -12,6 +13,10 @@ export class CalculatorComponent {
 
     constructor(private _calculationEngineService: CalculationEngineService) {
 
+    }
+
+    @Output() setExpression(expression: string) {
+        this.expression = expression;
     }
 
     KeyPress(c: string): void {
@@ -32,12 +37,17 @@ export class CalculatorComponent {
 
     Evaluate(): void {
         if (this.Validate()) {
-            this.expression = this._calculationEngineService.evaluate(this.expression).toString();
+            var oldExpr = this.expression;
+            var result: string = this._calculationEngineService.evaluate(this.expression).toString();
+            this.expression = result;
+            this.evaluated.emit( { expression: oldExpr, result: result });
         }
     }
 
     Validate(): boolean {
         return this._calculationEngineService.validate(this.expression);
     }
+
+    @Output() evaluated: EventEmitter<ICalculation> = new EventEmitter<ICalculation>();
 
 }
