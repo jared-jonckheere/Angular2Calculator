@@ -1,6 +1,14 @@
 ﻿<div class="col-lg-6 calculator">
     <div class="screen">
+
+            <div>
+            <button class="calculator-key-up calculator-up-down-container " (click)="backHistory()">&#9650;</button>
+            </div>
+            <div>
+                <button class="calculator-key-down calculator-up-down-container " (click)="forwardHistory()">&#9660;</button>
+        </div>
         <input class="screen-input" [(ngModel)]="expression" (keyup.enter)="Evaluate()" />
+
     </div>
     <div class="keypad">
         <table>

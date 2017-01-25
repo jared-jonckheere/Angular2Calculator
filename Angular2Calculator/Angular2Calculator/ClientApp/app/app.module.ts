@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
+import { CalculationHistoryComponent } from './components/calculationHistory/calculationHistory.component';
 
 @NgModule({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
-        CalculatorComponent
+        CalculatorComponent,
+        CalculationHistoryComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
