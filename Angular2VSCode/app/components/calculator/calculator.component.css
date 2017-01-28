@@ -1,0 +1,41 @@
+﻿.calculator {
+    min-width: 300px;
+}
+
+.screen {
+    margin: 3px 3px 7px 3px;
+}
+
+.screen-input {
+    width: inherit;
+}
+
+button.calculator-key {
+    background-color: blue;
+    color: white;
+    margin: 2px;
+    text-align: center;
+}
+
+button.calculator-key:disabled {
+    opacity: 0.3;
+}
+
+.calculator-up-down-container {
+    float: left;
+}
+
+button.calculator-key-up {
+    transform: scaleY(0.5) translate(0, -75%);
+    float: left;
+    margin:0px;
+    padding:0px;
+}
+
+button.calculator-key-down {
+
+    transform: scaleY(0.5) translate(-100%, 75%);
+    float: left;
+    margin:0px;
+    padding:0px;
+}
